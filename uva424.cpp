@@ -7,30 +7,17 @@ string add(string a, string b);
 
 int main(void)
 {
-    int T;
-    cin >> T;
+    string s;
+    int con = 0;
 
-    for(int i = 0; i < T; i++){
-        string a, b;
-        cin >> a >> b;
-        reverse(a.begin(), a.end());
-        reverse(b.begin(), b.end());
-
-        string s = add(a, b);
-        int pos;
-        for(int j = 0; j < s.length(); j++){
-            if(s[j] == '0')
-                continue;
-            else{
-                pos = j;
-                break;
-            }
-        }
-
-        for(int j = pos; j < s.length(); j++)
-            cout << s[j];
-        cout << endl;
+    string sum = "0";
+    while(cin >> s){
+        if(s == "0")
+            break;
+        sum = add(sum, s);
     }
+
+    cout << sum << endl;
 
     return 0;
 }
@@ -40,7 +27,6 @@ string add(string a, string b)
     string s;
     if(a.length() < b.length())
         swap(a, b);
-
 
     reverse(a.begin(), a.end());
     reverse(b.begin(), b.end());
@@ -57,6 +43,9 @@ string add(string a, string b)
     if(c > 0)
         s += (c % 10) + '0';
 
+    reverse(a.begin(), a.end());
+    reverse(b.begin(), b.end());
+    reverse(s.begin(), s.end());
 
     return s;
 }
