@@ -1,16 +1,15 @@
 #include <bits/stdc++.h>
-#define read() freopen("input.txt", "r", stdin);
-#define write() freopen("output.txt", "w", stdout);
-typedef unsigned long long int ull;
 using namespace std;
 
-template<class T> inline T sqr(T a) { return a * a; }
 int main(void)
 {
-    ull n;
+	long long int n;
 
-    while(cin >> n)
-        cout << sqr((n * (n + 1)) / 2) << endl;
+	while(cin >> n){
+		n = (n * (n + 1)) / 2;
 
-    return 0;
+		cout << n * n << endl;
+	}
+
+	return 0;
 }
